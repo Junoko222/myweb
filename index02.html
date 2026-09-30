@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>柯奏任 — 視覺傳達與數位體驗設計師</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Space Grotesk & Noto Sans TC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Noto Sans TC', 'sans-serif'],
+          },
+          colors: {
+            sato: {
+              red: '#E60012',     // 佐藤可士和標誌性赤紅
+              black: '#111111',   // 純粹高對比黑
+              gray: '#F5F5F7',    // 清爽極簡底灰
+              border: '#E5E5EA',  // 秩序感邊框灰
+              muted: '#6E6E73',   // 高級中性說明色
+            }
+          },
+          animation: {
+            'spin-slow': 'spin 14s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FFFFFF;
+      color: #111111;
+      font-feature-settings: "palt";
+    }
+    ::selection {
+      background-color: #E60012;
+      color: #FFFFFF;
+    }
+    /* 佐藤風格：純粹理性網格背景 */
+    .grid-bg {
+      background-size: 36px 36px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    }
+    /* 圓角方格硬陰影（圓角自適應） */
+    .sato-shadow {
+      box-shadow: 10px 10px 0px #111111;
+    }
+    .sato-shadow-red {
+      box-shadow: 10px 10px 0px #E60012;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- 頂部秩序導航 -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b-2 border-sato-black">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- 經典紅色圓角方塊 Logo 印記 -->
+      <a href="#about" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-sato-red rounded-xl text-white flex items-center justify-center font-display font-black text-xl transition-transform group-hover:rotate-90 duration-300 shadow-sm">
+          JK
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-black text-lg tracking-wider leading-none">柯奏任 Juno Ko</span>
+          <span class="text-[10px] text-sato-muted font-bold tracking-widest uppercase mt-0.5">個人設計作品集</span>
+        </div>
+      </a>
+
+      <!-- 四大核心架構導航 -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-bold tracking-wider">
+        <a href="#about" class="text-sato-black hover:text-sato-red transition-colors">01. 自我簡介</a>
+        <a href="#graphic" class="text-sato-black hover:text-sato-red transition-colors">02. 平面設計類</a>
+        <a href="#web" class="text-sato-black hover:text-sato-red transition-colors">03. 網頁設計類</a>
+        <a href="#contact" class="text-sato-black hover:text-sato-red transition-colors">04. 與我聯繫</a>
+      </nav>
+
+      <!-- 預約行動圓角按鈕 -->
+      <!--a href="#contact" class="px-6 py-2.5 bg-sato-red text-white font-display font-bold text-xs tracking-widest uppercase rounded-xl hover:bg-sato-black transition-all">
+        立即洽詢 →
+      </a -->
+
+    </div>
+  </header>
+
+  <!-- ==============================================
+       第一區塊：自我簡介 (About Me & Philosophy)
+  ============================================== -->
+  <section id="about" class="pt-32 pb-24 grid-bg border-b-2 border-sato-black relative">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-8">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sato-black text-white font-mono text-xs tracking-widest uppercase rounded-xl mb-6">
+            <span>CLARIFY • ICONIZE • AMPLIFY</span>
+          </div>
+
+          <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.05] mb-6 text-sato-black">
+          歡迎來到我的個人網頁
+          </h1>
+
+          <p class="text-base sm:text-lg text-sato-black/80 font-normal leading-relaxed mb-8 max-w-xl">
+             我是柯奏任，任職於金融保險業的電子商務部、行銷暨公關部等。<br>負責<span class="text-sato-red  underline-offset-8">系統專案管理、客群營運成效分析、電商行銷活動策劃、網站SEO優化與社群媒體經營</span>等。<br>
+          </p>
+
+          <p class="text-base sm:text-lg text-sato-black/80 font-normal leading-relaxed mb-8 max-w-xl">
+             熱愛將抽象的概念轉換成具體可行的企劃，<br>也習慣從受眾的角度去思考問題。
+          </p>
+          <p class="text-base sm:text-lg text-sato-black/80 font-normal leading-relaxed mb-8 max-w-xl">
+            致力於帶給受眾更多價值，在線上虛擬與線下真實的領域中，<br>發掘各種新的可能性。
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#graphic" class="px-8 py-4 bg-white border-2 border-sato-black font-display font-black text-xs tracking-widest uppercase rounded-2xl hover:bg-sato-black hover:text-white transition-all">
+              瀏覽精選作品 ↓
+            </a>
+          </div>
+        </div>
+
+        <!-- 個人肖像與旋轉日式 SVG 徽章（圓角外框） -->
+        <div class="lg:col-span-4 relative flex justify-center">
+          <div class="relative w-72 sm:w-80 h-[26rem] bg-white border-2 border-sato-black rounded-3xl sato-shadow overflow-hidden">
+            <img src="imgs/unnamed.png" 
+                 alt="Alex Chen" 
+                 class="w-full h-full object-cover">
+            
+            <div class="absolute bottom-0 left-0 w-full bg-white/95 backdrop-blur border-t-2 border-sato-black p-4 flex justify-between items-center rounded-b-3xl">
+              <div>
+                <p class="text-[10px] font-mono text-sato-muted uppercase font-bold">您好! 我是</p>
+                <h3 class="font-display font-black text-base">柯奏任 JUNO KO</h3>
+              </div>
+              <div class="w-6 h-6 bg-sato-red rounded-lg"></div>
+            </div>
+          </div>
+
+          <!-- 佐藤風格：旋轉 SVG 圓形標記 -->
+          <div class="absolute -top-8 -right-4 w-32 h-32 animate-spin-slow pointer-events-none">
+            <svg viewBox="0 0 100 100" class="w-full h-full">
+              <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="none" />
+              <text class="text-[8.5px] font-bold tracking-[0.2em] fill-sato-black">
+                <textPath href="#circlePath">
+                  • VISUAL IDENTITY • DIGITAL UX • IMPACT •
+                </textPath>
+              </text>
+            </svg>
+            <div class="absolute inset-0 m-auto w-8 h-8 rounded-full border border-sato-red flex items-center justify-center">
+              <div class="w-2.5 h-2.5 bg-sato-red rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 實績信任指標（圓角方格背景容器） -->
+      <div class="mt-20 pt-10 border-t-2 border-sato-black grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="p-6 bg-sato-gray/70 border border-sato-border rounded-2xl">
+          <span class="text-xs font-mono text-sato-muted uppercase font-bold block">EXPERIENCE</span>
+          <div class="font-display text-4xl font-black text-sato-black mt-1">9+ 年</div>
+          <p class="text-xs text-sato-muted mt-1">專注數位行銷與視覺傳達</p>
+        </div>
+        <div class="p-6 bg-sato-gray/70 border border-sato-border rounded-2xl">
+          <span class="text-xs font-mono text-sato-muted uppercase font-bold block">PROJECT VALUE</span>
+          <div class="font-display text-4xl font-black text-sato-red mt-1">$25M+</div>
+          <p class="text-xs text-sato-muted mt-1">累積驅動之客戶商業估值</p>
+        </div>
+        <div class="p-6 bg-sato-gray/70 border border-sato-border rounded-2xl">
+          <span class="text-xs font-mono text-sato-muted uppercase font-bold block">CONVERSION</span>
+          <div class="font-display text-4xl font-black text-sato-black mt-1">+180%</div>
+          <p class="text-xs text-sato-muted mt-1">改版後數位平均轉換提升</p>
+        </div>
+        <div class="p-6 bg-sato-gray/70 border border-sato-border rounded-2xl">
+          <span class="text-xs font-mono text-sato-muted uppercase font-bold block">ON-TIME RATE</span>
+          <div class="font-display text-4xl font-black text-sato-black mt-1">100%</div>
+          <p class="text-xs text-sato-muted mt-1">堅持秩序與零延遲交付</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<!-- =======================================================
+       第二區塊：平面設計類 (3 欄輪播幻燈片 + 共 12 個範例 + 全貌彈窗)
+  ======================================================= -->
+  <section id="graphic" class="py-24 bg-white border-b-2 border-sato-black relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- 標題與輪播切換控制器 -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-3 h-3 bg-sato-red rounded-sm"></div>
+            <span class="text-xs font-mono font-bold tracking-widest uppercase text-sato-black">CATEGORY 01</span>
+          </div>
+          <h2 class="font-display text-4xl sm:text-5xl font-black text-sato-black">平面設計類</h2>
+          <p class="text-sm font-medium text-sato-muted mt-2">
+            Brand Identity, Packaging, Signage & Editorial 
+          </p>
+        </div>
+
+        <!-- 幻燈片控制鈕與頁碼 (1 - 12) -->
+        <div class="flex items-center gap-4">
+          <div class="font-mono text-xs font-bold text-sato-muted tracking-widest" id="carousel-indicator">
+            <span id="current-slide" class="text-sato-red text-base">01</span> / 12
+          </div>
+          <div class="flex gap-2">
+            <button id="prevBtn" class="w-12 h-12 rounded-2xl border-2 border-sato-black bg-white flex items-center justify-center hover:bg-sato-red hover:text-white transition-all sato-shadow active:translate-x-0.5 active:translate-y-0.5">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button id="nextBtn" class="w-12 h-12 rounded-2xl border-2 border-sato-black bg-white flex items-center justify-center hover:bg-sato-red hover:text-white transition-all sato-shadow active:translate-x-0.5 active:translate-y-0.5">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 輪播視窗 (Carousel Viewport) -->
+      <div class="relative overflow-hidden -mx-3 px-3 py-4">
+        <div id="carouselTrack" class="flex transition-transform duration-500 ease-out">
+          <!-- 12 個項目將由下方 JS 自動掛載與初始化 -->
+        </div>
+      </div>
+
+      <!-- 底部引導提示 -->
+      <div class="mt-8 flex items-center justify-between text-xs font-mono text-sato-muted border-t border-sato-border pt-4">
+        <span>TIP: 點擊任一縮圖卡片可檢視高解析大圖與策略細節</span>
+        <span class="hidden sm:inline">SWIPE OR USE ARROWS TO NAVIGATE (12 PROJECTS)</span>
+      </div>
+
+    </div>
+  </section>
+
+ <!-- ==============================================
+       第三區塊：網頁設計類 (包含 [點擊前往] 另開視窗連結按鈕)
+  ============================================== -->
+  <section id="web" class="py-24 bg-sato-gray border-b-2 border-sato-black">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-3 h-3 bg-sato-red rounded-sm"></div>
+            <span class="text-xs font-mono font-bold tracking-widest uppercase text-sato-black">CATEGORY 02</span>
+          </div>
+          <h2 class="font-display text-4xl sm:text-5xl font-black text-sato-black">網頁設計類</h2>
+          <p class="text-sm font-medium text-sato-muted mt-2">UI/UX Systems, Responsive Web & High-Conversion Landing Pages</p>
+        </div>
+        <p class="text-sato-muted text-sm max-w-md">
+          「拒絕無效的華麗動態」。<br>將商業邏輯、SEO 導向與順暢的使用者體驗結合，打造讓訪客毫不猶豫點擊的數位體驗。
+        </p>
+      </div>
+
+      <!-- 作品網格 (網頁類 - 圓角方格卡片 + 點擊前往按鈕) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        <!-- Web Case 1 -->
+        <div class="bg-white border-2 border-sato-black rounded-3xl sato-shadow overflow-hidden group transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 sm:h-80 overflow-hidden border-b-2 border-sato-black">
+              <img src="imgs/01/01.png" 
+                   alt="官方粉絲團上線活動網頁" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-sato-black text-white text-xs font-mono font-bold px-3 py-1 rounded-xl">
+                Responsive Web & High-Conversion Landing Page
+              </div>
+            </div>
+            
+            <div class="p-8 pb-4">
+              <div class="flex justify-between items-center text-xs font-mono text-sato-muted mb-2">
+                <span>Compaign Landing Page</span>
+                <span class="text-sato-red font-bold px-2 py-0.5 bg-sato-red/10 rounded-md">好感度 +100%</span>
+              </div>
+              <h3 class="font-display font-black text-2xl mb-2 group-hover:text-sato-red transition-colors">
+                官方粉絲團上線活動網頁
+              </h3>
+              <p class="text-sm text-sato-muted leading-relaxed">
+                🎉臺灣產物保險*Be With You *粉絲募集，與你守護每一刻
+              </p>
+            </div>
+          </div>
+
+          <!-- 獨立點擊前往按鈕區塊 -->
+          <div class="p-8 pt-0">
+            <div class="pt-6 border-t border-sato-border flex items-center justify-between">
+              <span class="text-xs font-mono text-sato-muted font-bold">ONLINE PREVIEW</span>
+              <!-- [點擊前往] 連結按鈕，預設 target="_blank" 另開視窗 -->
+              <a href="https://junoko222.github.io/project01/index.html" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-sato-red text-white font-display font-bold text-xs tracking-widest uppercase rounded-xl hover:bg-sato-black transition-all duration-300 shadow-sm active:scale-95">
+                <span>點擊前往</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Case 2 -->
+        <div class="bg-white border-2 border-sato-black rounded-3xl sato-shadow overflow-hidden group transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 sm:h-80 overflow-hidden border-b-2 border-sato-black">
+              <img src="imgs/01/02.jpg" 
+                   alt="Compaign Landing Page" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-sato-red text-white text-xs font-mono font-bold px-3 py-1 rounded-xl">
+                Compaign Landing Page
+              </div>
+            </div>
+            
+            <div class="p-8 pb-4">
+              <div class="flex justify-between items-center text-xs font-mono text-sato-muted mb-2">
+                <span>Compaign Landing Page</span>
+                <span class="text-sato-red font-bold px-2 py-0.5 bg-sato-red/10 rounded-md">客單價提升 35%</span>
+              </div>
+              <h3 class="font-display font-black text-2xl mb-2 group-hover:text-sato-red transition-colors">
+                網路投保 ● 粽粽有賞 ● 端午吃喝玩樂節
+              </h3>
+              <p class="text-sm text-sato-muted leading-relaxed">
+                網路投保抽APPLE AirPads 立即投保享好康！
+              </p>
+            </div>
+          </div>
+
+          <!-- 獨立點擊前往按鈕區塊 -->
+          <div class="p-8 pt-0">
+            <div class="pt-6 border-t border-sato-border flex items-center justify-between">
+              <span class="text-xs font-mono text-sato-muted font-bold">ONLINE PREVIEW</span>
+              <!-- [點擊前往] 連結按鈕，預設 target="_blank" 另開視窗 -->
+              <a href="https://junoko222.github.io/project02/index.html" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-sato-red text-white font-display font-bold text-xs tracking-widest uppercase rounded-xl hover:bg-sato-black transition-all duration-300 shadow-sm active:scale-95">
+                <span>點擊前往</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+                <!-- Web Case 3 -->
+        <div class="bg-white border-2 border-sato-black rounded-3xl sato-shadow overflow-hidden group transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 sm:h-80 overflow-hidden border-b-2 border-sato-black">
+              <img src="imgs/01/03.png" 
+                   alt="Compaign Landing Page" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-sato-black text-white text-xs font-mono font-bold px-3 py-1 rounded-xl">
+                Compaign Landing Page
+              </div>
+            </div>
+            
+            <div class="p-8 pb-4">
+              <div class="flex justify-between items-center text-xs font-mono text-sato-muted mb-2">
+                <span>Compaign Landing Page</span>
+                <span class="text-sato-red font-bold px-2 py-0.5 bg-sato-red/10 rounded-md">客單價提升 35%</span>
+              </div>
+              <h3 class="font-display font-black text-2xl mb-2 group-hover:text-sato-red transition-colors">
+                網路投保 ● 鼠一鼠二 ● 新年換新機 投保抽iPhone
+              </h3>
+              <p class="text-sm text-sato-muted leading-relaxed">
+                網路投保抽APPLE iPhone 11 Pro 立即投保抽新機！
+              </p>
+            </div>
+          </div>
+
+          <!-- 獨立點擊前往按鈕區塊 -->
+          <div class="p-8 pt-0">
+            <div class="pt-6 border-t border-sato-border flex items-center justify-between">
+              <span class="text-xs font-mono text-sato-muted font-bold">ONLINE PREVIEW</span>
+              <!-- [點擊前往] 連結按鈕，預設 target="_blank" 另開視窗 -->
+              <a href="https://junoko222.github.io/project05/index.html" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-sato-red text-white font-display font-bold text-xs tracking-widest uppercase rounded-xl hover:bg-sato-black transition-all duration-300 shadow-sm active:scale-95">
+                <span>點擊前往</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Web Case 4 -->
+        <div class="bg-white border-2 border-sato-black rounded-3xl sato-shadow overflow-hidden group transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between">
+          <div>
+            <div class="relative h-72 sm:h-80 overflow-hidden border-b-2 border-sato-black">
+              <img src="imgs/01/04.jpg" 
+                   alt="Compaign Landing Page" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 left-4 bg-sato-red text-white text-xs font-mono font-bold px-3 py-1 rounded-xl">
+                Compaign Landing Page
+              </div>
+            </div>
+            
+            <div class="p-8 pb-4">
+              <div class="flex justify-between items-center text-xs font-mono text-sato-muted mb-2">
+                <span>Compaign Landing Page</span>
+                <span class="text-sato-red font-bold px-2 py-0.5 bg-sato-red/10 rounded-md">投保數提升 15%</span>
+              </div>
+              <h3 class="font-display font-black text-2xl mb-2 group-hover:text-sato-red transition-colors">
+                網路投保 ● 旅平險揪團保 ● 輕鬆一指搞定
+              </h3>
+              <p class="text-sm text-sato-muted leading-relaxed">
+                HOT旅平險●不便險 抽獎活動
+              </p>
+            </div>
+          </div>
+
+          <!-- 獨立點擊前往按鈕區塊 -->
+          <div class="p-8 pt-0">
+            <div class="pt-6 border-t border-sato-border flex items-center justify-between">
+              <span class="text-xs font-mono text-sato-muted font-bold">ONLINE PREVIEW</span>
+              <!-- [點擊前往] 連結按鈕，預設 target="_blank" 另開視窗 -->
+              <a href="https://junoko222.github.io/project06/index.html" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-2 px-6 py-3 bg-sato-red text-white font-display font-bold text-xs tracking-widest uppercase rounded-xl hover:bg-sato-black transition-all duration-300 shadow-sm active:scale-95">
+                <span>點擊前往</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==============================================
+       第四區塊：與我聯繫 (Contact & Conversion Form)
+  ============================================== -->
+  <footer id="contact" class="py-24 bg-white grid-bg">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- 圓角方格諮詢表單容器 -->
+      <div class="max-w-3xl mx-auto bg-white border-2 border-sato-black rounded-3xl p-8 sm:p-14 sato-shadow">
+        
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-4 h-4 bg-sato-red rounded-md"></div>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest text-sato-black">04 CONTACT ME</span>
+        </div>
+
+        <h2 class="font-display text-3xl sm:text-5xl font-black text-sato-black uppercase mb-4 leading-tight">
+          開始梳理您的品牌，<br>創造無可撼動的影響力。
+        </h2>
+        
+        <p class="text-sato-muted text-sm sm:text-base mb-8">
+          無論是全新的「平面識別系統」或是高轉換率的「旗艦網頁設計」，填寫以下表單，我將在 24 小時內親自回覆並發送 30 分鐘線上策略討論邀請。
+        </p>
+
+        <!-- 諮詢表單（所有 input、select、button 皆為圓角方格） -->
+        <form class="space-y-5" onsubmit="event.preventDefault(); alert('感謝您的洽詢！我將在 24 小時內回覆您。');">
+          
+          <div>
+            <label class="block text-xs font-mono font-bold uppercase text-sato-black mb-1.5">您的姓名 / 企業寶號 *</label>
+            <input type="text" required placeholder="例如：林經理 / 迅銷集團" class="w-full p-4 border-2 border-sato-black rounded-2xl font-sans text-sm focus:outline-none focus:border-sato-red transition-all">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-bold uppercase text-sato-black mb-1.5">商業電子信箱 (Email) *</label>
+            <input type="email" required placeholder="alex@company.com" class="w-full p-4 border-2 border-sato-black rounded-2xl font-sans text-sm focus:outline-none focus:border-sato-red transition-all">
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-bold uppercase text-sato-black mb-1.5">諮詢專案類別 *</label>
+            <select class="w-full p-4 border-2 border-sato-black rounded-2xl font-sans text-sm bg-white focus:outline-none focus:border-sato-red transition-all">
+              <option>平面設計類（品牌識別、包裝、主視覺）</option>
+              <option>網頁設計類（響應式官網、SaaS 介面、電商）</option>
+              <option selected>平面 ＋ 網頁 全套品牌整合專案</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono font-bold uppercase text-sato-black mb-1.5">簡短專案描述或目標</label>
+            <textarea rows="3" placeholder="請簡述您的需求、預期時程或目前的痛點..." class="w-full p-4 border-2 border-sato-black rounded-2xl font-sans text-sm focus:outline-none focus:border-sato-red transition-all"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-5 bg-sato-red text-white font-display font-black text-sm uppercase tracking-widest rounded-2xl hover:bg-sato-black transition-colors duration-300">
+            送出專案洽詢需求 →
+          </button>
+
+        </form>
+
+        <!-- 快捷聯絡管道 -->
+        <div class="mt-10 pt-6 border-t border-sato-border flex flex-wrap justify-between items-center text-xs font-mono text-sato-muted gap-4">
+          <div>DIRECT EMAIL: alex@designarchitect.studio</div>
+          <div>LOCATION: TAIPEI & REMOTE WORLDWIDE</div>
+        </div>
+
+      </div>
+
+      <!-- 頁尾版權 -->
+      <div class="mt-20 pt-8 border-t border-sato-border flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-sato-muted">
+        <div>© 2026 柯奏任 JUNO KO. ALL RIGHTS RESERVED.</div>
+        <div class="flex gap-6 font-bold text-sato-black uppercase">
+          <a href="#" class="hover:text-sato-red">Facebook</a>
+          <a href="#" class="hover:text-sato-red">Instagram</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+   <!-- =======================================================
+       縮圖全貌畫廊視窗 (Lightbox Modal)
+  ======================================================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4 sm:p-8 transition-opacity duration-300 opacity-0">
+    <div class="relative bg-white border-2 border-sato-black rounded-3xl max-w-5xl w-full max-h-[90vh] flex flex-col lg:flex-row overflow-hidden sato-shadow">
+      
+      <!-- 關閉按鈕 -->
+      <button onclick="closeModal()" class="absolute top-4 right-4 z-20 w-10 h-10 bg-white border-2 border-sato-black rounded-xl flex items-center justify-center hover:bg-sato-red hover:text-white transition-colors">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <!-- 左側：全貌大圖預覽 -->
+      <div class="lg:w-3/5 bg-sato-gray flex items-center justify-center p-4 overflow-hidden border-b-2 lg:border-b-0 lg:border-r-2 border-sato-black max-h-[50vh] lg:max-h-full">
+        <img id="modalImage" src="" alt="Full Preview" class="w-full h-full object-contain rounded-xl max-h-[70vh]">
+      </div>
+
+      <!-- 右側：專案詳情與商業思考 -->
+      <div class="lg:w-2/5 p-6 sm:p-8 flex flex-col justify-between overflow-y-auto bg-white">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span id="modalTag" class="px-2.5 py-1 bg-sato-red text-white text-[10px] font-mono font-bold rounded-lg uppercase">TAG</span>
+            <span id="modalYear" class="text-xs font-mono text-sato-muted">2024</span>
+          </div>
+
+          <h3 id="modalTitle" class="font-display font-black text-2xl text-sato-black mb-4 leading-tight">
+            專案名稱
+          </h3>
+
+          <div class="h-0.5 w-12 bg-sato-red mb-4"></div>
+
+          <p id="modalDesc" class="text-sm text-sato-muted leading-relaxed mb-6">
+            專案詳細策略描述...
+          </p>
+
+          <div class="p-4 bg-sato-gray rounded-2xl border border-sato-border mb-6">
+            <span class="text-[10px] font-mono text-sato-muted uppercase font-bold block mb-1">STRATEGIC HIGHLIGHT</span>
+            <p id="modalMetric" class="text-xs font-bold text-sato-black">提升品牌溢價力與實體辨識度</p>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =======================================================
+       輪播與彈窗 JavaScript 控制邏輯 (12 組案例資料庫)
+  ======================================================= -->
+  <script>
+    // 共 12 組精選平面設計商業範例資料庫 
+    const graphicProjects = [
+      // 1-12 原有精選案例
+      {
+        id: 1,
+        title: "網路投保 母親節限時活動",
+        tag: "POSTER & EDITORIAL",
+        year: "2024",
+        desc: "以幾何圓形符號重新定義東方茶道，打造統一的門市招牌、包裝與空間指標系統，在 0.1 秒內傳達寂靜純粹的品牌哲學。",
+        metric: "",
+        image: "imgs/02/001.jpg"
+      },
+      {
+        id: 2,
+        title: "閉上眼許個願 好禮任你選",
+        tag: "POSTER & EDITORIAL",
+        year: "2024",
+        desc: "純白極簡壓印紙材，搭配高飽和赤紅封條。透過精密的折構工程免除黏膠，實現日本頂級金點包裝級的開箱觸感。",
+        metric: "",
+        image: "imgs/02/002.jpg"
+      },
+      {
+        id: 3,
+        title: "臺產慶端午 猜謎粽好禮",
+        tag: "POSTER & EDITORIAL",
+        year: "2023",
+        desc: "運用高度秩序化的網格排版系統與極具張力的粗襯線字體，呈現亞洲現代建築論壇的理性與厚重力道。",
+        metric: "",
+        image: "imgs/02/003.jpg"
+      },
+      {
+        id: 4,
+        title: "網路投保 耶誕歡樂慶",
+        tag: "POSTER & EDITORIAL",
+        year: "2024",
+        desc: "為新創私人航空量身定制 26 字母幾何標識字型，兼顧遠距辨識度與航站指標的國際化清晰度。",
+        metric: "",
+        image: "imgs/02/004.jpg"
+      },
+      {
+        id: 5,
+        title: "東京樂游趣 盛夏嗨翻天",
+        tag: "POSTER & EDITORIAL",
+        year: "2023",
+        desc: "結合越前和紙手作撕邊與單色黑燙印，重新詮釋 200 年酒造傳統，將產品定價提升至原先的 2.8 倍。",
+        metric: "",
+        image: "imgs/02/005.jpg"
+      },
+      {
+        id: 6,
+        title: "業界首創 旅行費用補償險",
+        tag: "POSTER & EDITORIAL",
+        year: "2023",
+        desc: "消除傳統 B2B 科技公司的晦暗形象，以純粹紅黑幾何構成精密符號，打造如同消費級精品般的俐落信賴感。",
+        metric: "",
+        image: "imgs/02/006.jpg"
+      },
+      {
+        id: 7,
+        title: "請假攻略 一路玩到底",
+        tag: "POSTER & EDITORIAL",
+        year: "2023",
+        desc: "500 頁全精裝畫冊，以純白荷蘭布面與微雕刻字體呈現。內部版面講究黃金比例留白，體現空間詩意。",
+        metric: "",
+        image: "imgs/02/007.jpg"
+      },
+      {
+        id: 8,
+        title: "歡慶冬至 團圓齊聚",
+        tag: "POSTER & EDITORIAL",
+        year: "2024",
+        desc: "將化學元素週期表的嚴謹感轉化為包裝美學，使用再生玻璃與無油墨壓模，兼顧可持續性與純淨視覺。",
+        metric: "",
+        image: "imgs/02/008.jpg"
+      },
+      {
+        id: 9,
+        title: "鼠一鼠二 新年好運到",
+        tag: "KEY VISUAL POSTER",
+        year: "2023",
+        desc: "運用聲波頻率演算法生成的動態文字海報，將無形的聲音轉換為具備強烈衝擊力的純平面幾何視覺。",
+        metric: "",
+        image: "imgs/02/009.jpg"
+      },
+      {
+        id: 10,
+        title: "NOMA 現代北歐家具手冊",
+        tag: "BRAND GUIDELINE",
+        year: "2024",
+        desc: "全套 160 頁品牌識別規範，涵蓋門市、展場、數位及文宣標準，建立跨國團隊統一的極簡品質標準。",
+        metric: "使跨國分店宣傳品產出效率提升 300%",
+        image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        id: 11,
+        title: "HIKARI 未來移動載具標誌系統",
+        tag: "MOBILITY IDENTITY",
+        year: "2024",
+        desc: "為次世代無人電動巴量身設計車身識別與夜間發光徽標，強調流動、安全與人本主義的科技溫度。",
+        metric: "市府概念驗證計畫最高市民好感度",
+        image: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=85"
+      },
+      {
+        id: 12,
+        title: "KYOTO CRAFT 傳統匠人振興禮盒",
+        tag: "GIFT BOX SYSTEM",
+        year: "2023",
+        desc: "串聯 8 位京都傳統工藝匠人，以現代磁吸黑盒與朱紅印章串聯各異器皿，讓老工藝煥發當代收藏價值。",
+        metric: "首批限量 500 組於 48 小時內售罄",
+        image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1200&q=85"
+      },
+    ];
+
+    // 動態渲染 12 組輪播卡片
+    const track = document.getElementById('carouselTrack');
+    
+    graphicProjects.forEach((p, index) => {
+      const card = document.createElement('div');
+      // 桌機 (1/3) 顯示 3 個、平板 (1/2) 顯示 2 個、手機 (1/1) 顯示 1 個
+      card.className = "w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3";
+      card.innerHTML = `
+        <div onclick="openModal(${index})" class="border-2 border-sato-black bg-white rounded-3xl sato-shadow overflow-hidden group cursor-pointer transition-transform duration-300 hover:-translate-y-2 flex flex-col justify-between h-full">
+          <div class="h-64 overflow-hidden border-b-2 border-sato-black bg-sato-gray relative">
+            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute top-3 left-3 bg-sato-red text-white text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg">
+              ${p.tag}
+            </div>
+            <div class="absolute bottom-3 right-3 w-8 h-8 rounded-xl bg-white/90 backdrop-blur border border-sato-black flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <i class="fa-solid fa-magnifying-glass-plus text-xs text-sato-black"></i>
+            </div>
+          </div>
+          <div class="p-6">
+            <span class="text-xs font-mono text-sato-muted">${p.year} • 點擊檢視全貌</span>
+            <h3 class="font-display font-black text-xl mt-1 mb-2 group-hover:text-sato-red transition-colors line-clamp-1">
+              ${p.title}
+            </h3>
+            <p class="text-xs text-sato-muted leading-relaxed line-clamp-2">
+              ${p.desc}
+            </p>
+          </div>
+        </div>
+      `;
+      track.appendChild(card);
+    });
+
+    // 輪播滑動控制邏輯 (12 項目循環)
+    let currentIndex = 0;
+    
+    function getCardsPerView() {
+      if (window.innerWidth >= 1024) return 3; // 桌機同時呈現 3 個
+      if (window.innerWidth >= 768) return 2;  // 平板呈現 2 個
+      return 1;                                // 手機呈現 1 個
+    }
+
+    function updateCarousel() {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = graphicProjects.length - cardsPerView;
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex < 0) currentIndex = 0;
+
+      const percentage = (currentIndex * (100 / cardsPerView));
+      track.style.transform = `translateX(-${percentage}%)`;
+
+      // 更新進度顯示 (01 - 24)
+      document.getElementById('current-slide').textContent = 
+        String(currentIndex + 1).padStart(2, '0');
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = graphicProjects.length - cardsPerView;
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // 循環回到開頭
+      }
+      updateCarousel();
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      const cardsPerView = getCardsPerView();
+      const maxIndex = graphicProjects.length - cardsPerView;
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = maxIndex; // 循環到末尾
+      }
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+    // ==============================================
+    // Lightbox 全貌彈窗控制邏輯
+    // ==============================================
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalTag = document.getElementById('modalTag');
+    const modalYear = document.getElementById('modalYear');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalMetric = document.getElementById('modalMetric');
+
+    function openModal(index) {
+      const data = graphicProjects[index];
+      modalImg.src = data.image;
+      modalTitle.textContent = data.title;
+      modalTag.textContent = data.tag;
+      modalYear.textContent = data.year;
+      modalDesc.textContent = data.desc;
+      modalMetric.textContent = data.metric;
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+      }, 20);
+      document.body.style.overflow = 'hidden'; // 禁止背景滾動
+    }
+
+    function closeModal() {
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto'; // 恢復背景滾動
+      }, 300);
+    }
+
+    // 點擊彈窗外部背景關閉
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // 支援 ESC 鍵關閉彈窗
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  </script>
+
+</body>
+</html>
